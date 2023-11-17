@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Comic Sans MS;
+            margin: 0;
+            padding: 0;
+            background-color: #3a6db4;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: #000000;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .header-title {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+
+        .main {
+            padding: 20px 0;
+        }
+
+        .footer {
+            background-color: rgb(9, 1, 1);
+            color: white;
+            text-align: center;
+            padding: 2px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .portfolio-menu {
+            display: none;
+            background-color: #e0e0e0;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .LAb-menu {
+            display: none;
+            background-color: #e0e0e0;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .toggle-button {
+            background-color: #ff0000;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: progress;
+        }
+        .toggle-button-lab {
+            background-color: rgb(255, 81, 0);
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 15px;
+            text-align: match-parent;
+            text-decoration: none;
+            display:block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .center{
+            position:absolute;
+            top:12%;
+            left:50%;
+            transform:prespective(100px) translate(-50%,-50%);
+            transform:skewY(15deg);
+            transition:1.5s;
+        }
+
+        .center:hover{
+            transform:prespective(100px) translate(-50%,-50%);
+            transform:skewY(0deg);
+        }
+
+        .center h1 span{
+            position:absolute;
+            top:0;
+            left:0;
+            transform:translate(-50%,-50%);
+            margin:0;
+            padding:0;
+            text-transform:uppercase;
+            font-size:4em;
+            color:#fff;
+            transform-style:preserve-3d;
+            transition:1.5s;
+        }
+        .center h1 span:nth-child(1){
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+
+
+        .center h1 span:nth-child(2){
+            color:#a90bc9;
+            transform:translate(-50%,-50%) skewX(-75deg);
+            left:-38px;
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+        }
+
+        .center h1 span:nth-child(3){
+            transform:translate(-50%,-50%) skewY(0deg);
+            left:-76px;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        .center:hover h1 span:nth-child(2), 
+        .center:hover h1 span:nth-child(3){
+            transform:translate(-50%,-50%) skewX(0deg);
+            left:0;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="center">
+            <h1>
+              <span>Portfolio</span>
+            
+              <span>Portfolio</span>
+              <span>Portfolio</span>
+            
+            </h1>
+          </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h2>Добро пожаловать ко мне на сайт! Он расскажет обо мне немного, но достаточно для Вас.</h2>
+            <p style="font-size: 26px">Меня зовут Никита Борзов. Мне 18 лет. Я очень люблю фотографировать, но вам я ничего не покажу. Если захотите увидеть мои работы- пишите в тг😉, но лучше-  не пишите.</p>
+            
+            <button class="toggle-button" onclick="togglePortfolio()">Информация обо мне:</button>
+            <div class="portfolio-menu" id="portfolioMenu">
+                <p>Можете ознакомиться с моими контактами:</p>
+                <ul>
+                    <li><a href="https://github.com/nikikiki19" target="_blank">GitHub</a></li>
+                    <li><b>мой ник в тг - @nikikiki19</b> </li>
+                </ul>
+            </div>
+            <button class="toggle-button-lab" onclick="toggleLab()">LAB</button>
+            <div class="LAb-menu" id="LabMenu">
+                <t>Лаба по fastapi:</t>
+                <ul>
+                    <li><a href="https://disk.yandex.ru/d/WKUhOufcZg0pag" target="_blank">ссылка на я.диск</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Да, я сам сделал этот кривой сайт. Всем спасибо.</p>
+    </footer>
+
+    <script>
+        function togglePortfolio() {
+            var portfolioMenu = document.getElementById("portfolioMenu");
+            if (portfolioMenu.style.display === "none") {
+                portfolioMenu.style.display = "block";
+            } else {
+                portfolioMenu.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        function toggleLab() {
+            var LabMenu = document.getElementById("LabMenu");
+            if (LabMenu.style.display === "none") {
+                LabMenu.style.display = "block";
+            } else {
+                LabMenu.style.display = "none";
+            }
+        }
+        </script>
+</body>
+</html>
